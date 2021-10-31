@@ -1,1 +1,1 @@
-# enigma2-dev nonsolosat-team
+# enigma2-dev NSS-TEAM
