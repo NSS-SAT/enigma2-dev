@@ -56,7 +56,10 @@ class PluginBrowser(Screen, ProtectedScreen):
 		ProtectedScreen.__init__(self)
 
 		self.firsttime = True
-		
+
+		self["key_red"] = self["red"] = Label(_("Remove plugins"))
+		self["key_green"] = self["green"] = Label(_("Download plugins"))
+		self.list = []
 		self["list"] = PluginList(self.list)
 
 		self["actions"] = ActionMap(["WizardActions", "MenuActions"],
@@ -67,8 +70,8 @@ class PluginBrowser(Screen, ProtectedScreen):
 		})
 		self["PluginDownloadActions"] = ActionMap(["ColorActions"],
 		{
-			"red": self.delete,
-			"green": self.download
+			"": self.delete,
+			"": self.download
 		})
 		self["DirectionActions"] = ActionMap(["DirectionActions"],
 		{
@@ -520,3 +523,6 @@ class PluginDownloadBrowser(Screen):
 				list.append(PluginCategoryComponent(x, expandableIcon, self.listWidth))
 		self.list = list
 		self["list"].l.setList(list)
+
+
+	
