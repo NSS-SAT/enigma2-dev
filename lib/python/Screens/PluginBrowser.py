@@ -56,10 +56,7 @@ class PluginBrowser(Screen, ProtectedScreen):
 		ProtectedScreen.__init__(self)
 
 		self.firsttime = True
-
-		self["key_red"] = self["re"] = Label(_("Remove plugins"))
-		self["key_green"] = self["gree"] = Label(_("Download plugins"))
-		self.list = []
+		
 		self["list"] = PluginList(self.list)
 
 		self["actions"] = ActionMap(["WizardActions", "MenuActions"],
